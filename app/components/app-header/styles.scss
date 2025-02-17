@@ -1,0 +1,48 @@
+@reference "tailwindcss";
+
+.navbar {
+  @apply fixed flex h-full items-center justify-center w-full;
+
+  background-color: rgba(255, 255, 255, 0.05);
+  height: 66px;
+  top: 0;
+  z-index: 10;
+
+  &--transparent {
+    @apply duration-300 transition-all;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  &--active {
+    @apply bg-black;
+  }
+
+  &__layout {
+    @apply flex justify-between w-full;
+
+    max-width: 1280px;
+  }
+
+  &__brand {
+    @apply cursor-pointer inline-flex;
+
+    max-width: calc(112px + 32px);
+    padding: 8px 16px;
+  }
+}
+
+.nav {
+  @apply hidden lg:flex;
+
+  &__link {
+    @apply flex cursor-pointer items-center uppercase;
+
+    color: #e5e5e5;
+    font-weight: 500;
+    padding: 8px 16px;
+
+    *:nth-child(2) {
+      @apply ml-2.5;
+    }
+  }
+}
