@@ -14,7 +14,7 @@
   }
 
   &--active {
-    @apply bg-black;
+    @apply ease-in bg-black;
   }
 
   &__layout {

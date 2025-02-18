@@ -1,3 +1,4 @@
+import Providers from './providers';
 import './main.scss';
 
 export default function RootLayout({
@@ -5,7 +6,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

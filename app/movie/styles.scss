@@ -1,0 +1,22 @@
+@reference "tailwindcss";
+
+.main {
+  @apply flex justify-center;
+
+  min-height: calc(100vh - 66px - 160px);
+  padding-top: 66px;
+
+  &__layout {
+    @apply grid grid-cols-1 md:grid-cols-4 gap-8 w-full;
+
+    max-width: 1280px;
+    padding: 0 16px;
+    width: 100%;
+  }
+
+  &__heading {
+    @apply col-span-4 flex items-center justify-between pt-4 md:pt-24 pb-4 md:pb-12;
+
+    color: #e5e5e5;
+  }
+}
