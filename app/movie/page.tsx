@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import AppLayout from '@/app/shared/components/app-layout';
 import AppHeader from '@/app/shared/components/app-header';
 
-import DiscoverMovie from './shared/components/discover-movie';
+import DiscoverMovie from './components/discover-movie';
 import './styles.scss';
 
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
 };
 
-async function Discover() {
+function PageDiscover() {
   return (
     <AppLayout>
       <AppHeader />
@@ -52,4 +52,4 @@ async function Discover() {
   );
 }
 
-export default Discover;
+export default PageDiscover;

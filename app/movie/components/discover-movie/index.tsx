@@ -11,6 +11,9 @@ import './styles.scss';
 const AppMovie = dynamic(() => import('@/app/shared/components/app-movie'), {
   ssr: false,
 });
+const AppButton = dynamic(() => import('@/app/shared/components/app-button'), {
+  ssr: false,
+});
 
 function DiscoverMovie() {
   const queryDiscover = useInfiniteQuery({
@@ -49,13 +52,14 @@ function DiscoverMovie() {
       </div>
 
       {queryDiscover.hasNextPage && (
-        <div
-          className="discover__action"
-          onClick={() => {
-            queryDiscover.fetchNextPage();
-          }}
-        >
-          <button>Load More</button>
+        <div className="discover__action">
+          <AppButton
+            onClick={() => {
+              queryDiscover.fetchNextPage();
+            }}
+          >
+            Load More
+          </AppButton>
         </div>
       )}
     </>
