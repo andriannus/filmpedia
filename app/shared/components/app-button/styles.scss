@@ -1,0 +1,16 @@
+@reference "tailwindcss";
+
+.button {
+  @apply cursor-pointer border-red-500 bg-red-500 hover:bg-red-700 rounded-full text-white;
+  padding: 8px 36px;
+
+  &--outline {
+    @apply bg-transparent;
+
+    border: 1px solid #ffffff;
+
+    &:hover {
+      @apply bg-white text-black;
+    }
+  }
+}
