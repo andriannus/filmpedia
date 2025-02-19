@@ -1,0 +1,26 @@
+@reference "tailwindcss";
+
+.review {
+  @apply bg-white flex justify-center;
+
+  &__layout {
+    @apply flex flex-col w-full;
+
+    max-width: 1280px;
+    padding: 56px 16px;
+  }
+
+  &__card {
+    @apply h-fit p-6 rounded-lg;
+
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  &__rating {
+    @apply flex font-semibold items-start rounded-lg text-2xl;
+
+    background-color: rgba(196, 196, 196, 0.28);
+    padding: 4px 16px 4px 6px;
+  }
+}

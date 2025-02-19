@@ -18,7 +18,7 @@ function AppFooter() {
           />
         </div>
 
-        <span>Made with Nuxt 3</span>
+        <span>Made with Next.js</span>
       </div>
     </footer>
   );

@@ -5,7 +5,8 @@ import AppHeader from '@/app/shared/components/app-header';
 import AppLayout from '@/app/shared/components/app-layout';
 import { TMDB_IMAGE_BASE_URL } from '@/app/shared/constants/movie';
 
-import DetailMovie from './components/detail';
+import MovieDetail from './components/detail';
+import MovieReviews from './components/reviews';
 
 type PageMovieProps = {
   params: Promise<{ id: number }>;
@@ -39,10 +40,13 @@ export async function generateMetadata({
 }
 
 async function PageMovie({ params }: PageMovieProps) {
+  const id = (await params).id;
+
   return (
     <AppLayout>
       <AppHeader />
-      <DetailMovie id={(await params).id} />
+      <MovieDetail id={id} />
+      <MovieReviews id={id} />
     </AppLayout>
   );
 }

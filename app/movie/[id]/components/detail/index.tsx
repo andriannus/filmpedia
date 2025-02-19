@@ -12,7 +12,7 @@ type DetailMovieProps = {
   id: number;
 };
 
-function DetailMovie({ id }: DetailMovieProps) {
+function MovieDetail({ id }: DetailMovieProps) {
   const queryMovie = useQuery({
     queryKey: ['movie', id],
     queryFn: () => fetchMovie(id),
@@ -67,4 +67,4 @@ function DetailMovie({ id }: DetailMovieProps) {
   );
 }
 
-export default DetailMovie;
+export default MovieDetail;
