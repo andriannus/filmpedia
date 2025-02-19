@@ -7,6 +7,7 @@ import { TMDB_IMAGE_BASE_URL } from '@/app/shared/constants/movie';
 
 import MovieDetail from './components/detail';
 import MovieReviews from './components/reviews';
+import MovieRecommendations from './components/recommendations';
 
 type PageMovieProps = {
   params: Promise<{ id: number }>;
@@ -47,6 +48,7 @@ async function PageMovie({ params }: PageMovieProps) {
       <AppHeader />
       <MovieDetail id={id} />
       <MovieReviews id={id} />
+      <MovieRecommendations id={id} />
     </AppLayout>
   );
 }

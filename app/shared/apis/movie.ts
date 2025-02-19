@@ -1,6 +1,7 @@
 import { apiTMDBService } from '@/app/shared/services/tmdb-service';
 import type {
   MovieDetail,
+  MovieRecommendationResponse,
   MovieReviewResponse,
 } from '@/app/shared/types/movie';
 
@@ -13,6 +14,14 @@ export async function fetchMovie(id: number) {
 export async function fetchMovieReviews(id: number) {
   const { data } = await apiTMDBService.get<MovieReviewResponse>(
     `/movie/${id}/reviews`,
+  );
+
+  return data;
+}
+
+export async function fetchMovieRecommendations(id: number) {
+  const { data } = await apiTMDBService.get<MovieRecommendationResponse>(
+    `/movie/${id}/recommendations`,
   );
 
   return data;

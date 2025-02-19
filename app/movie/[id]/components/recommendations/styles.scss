@@ -1,0 +1,19 @@
+@reference "tailwindcss";
+
+.recommendation {
+  @apply flex justify-center;
+
+  &__layout {
+    @apply flex flex-col mt-13 mb-13 px-4 py-0 w-full;
+
+    max-width: 1280px;
+  }
+
+  &__title {
+    @apply block font-semibold mb-9 text-sm text-white uppercase;
+  }
+
+  &__grid {
+    @apply grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4;
+  }
+}
