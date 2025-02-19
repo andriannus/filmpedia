@@ -44,7 +44,13 @@ function AppHeader({ transparent }: AppHeaderProps) {
     >
       <div className="navbar__layout">
         <Link className="navbar__brand" href="/movie">
-          <Image src="/images/logo.webp" alt="Logo" height={62} width={225} />
+          <Image
+            src="/images/logo.webp"
+            alt="Logo"
+            height={62}
+            width={225}
+            priority
+          />
         </Link>
 
         <AppSearch />

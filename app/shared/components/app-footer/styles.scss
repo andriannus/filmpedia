@@ -1,0 +1,33 @@
+@reference "tailwindcss";
+
+.footer {
+  @apply flex justify-center;
+
+  background-color: rgba(0, 0, 0, 0.29);
+  color: #929292;
+  padding: 64px 0;
+
+  &__layout {
+    @apply items-center flex flex-row justify-center w-full;
+
+    height: 32px;
+    max-width: 1280px;
+    padding: 0 16px;
+
+    * {
+      @apply w-full;
+    }
+
+    *:last-child {
+      text-align: right;
+    }
+  }
+
+  &__logo {
+    @apply flex justify-center;
+
+    > * {
+      width: 88px;
+    }
+  }
+}
