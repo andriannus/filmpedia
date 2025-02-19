@@ -22,5 +22,53 @@
 
     background-color: rgba(196, 196, 196, 0.28);
     padding: 4px 16px 4px 6px;
+
+    &-icon {
+      @apply h-4 w-4;
+    }
+
+    &-number {
+      @apply font-semibold text-4xl ml-1.5;
+    }
+  }
+
+  &__title {
+    @apply block font-semibold mb-6 text-sm text-red-500;
+  }
+
+  &__content {
+    @apply text-justify;
+  }
+
+  &__button {
+    @apply text-red-500 italic underline cursor-pointer;
+  }
+
+  &__header {
+    @apply flex mb-6;
+  }
+
+  &__avatar {
+    @apply w-12 h-12 bg-gray-300 mr-4 overflow-hidden rounded-full;
+
+    > * {
+      @apply h-full;
+    }
+  }
+
+  &__grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-4;
+  }
+
+  &__info {
+    @apply flex flex-col grow justify-center;
+
+    &-title {
+      @apply font-bold;
+    }
+
+    &-subtitle {
+      @apply text-xs;
+    }
   }
 }

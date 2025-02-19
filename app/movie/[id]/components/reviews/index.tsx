@@ -53,35 +53,35 @@ function MovieReviews({ id }: MovieReviewsProps) {
     return `${content.substring(0, 300)}...`;
   };
 
-  if (queryReview.isError || !queryReview.data) return null;
+  if (queryReview.isError || !reviews.length) return null;
 
   return (
     <div className="review">
       <div className="review__layout">
-        <span className="block font-semibold mb-6 text-sm text-red-500">
-          REVIEWS
-        </span>
+        <span className="review__title">REVIEWS</span>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="review__grid">
           {reviews.map((review, index) => {
             return (
               <div key={review.id} className="review__card">
-                <div className="flex mb-6">
-                  <div className="w-12 h-12 bg-gray-300 mr-4 overflow-hidden rounded-full">
-                    <Image
-                      src={`${TMDB_IMAGE_BASE_URL}/original${review.author_details.avatar_path}`}
-                      alt={review.author_details.name}
-                      width={48}
-                      height={48}
-                    />
+                <div className="review__header">
+                  <div className="review__avatar">
+                    {review.author_details.avatar_path && (
+                      <Image
+                        src={`${TMDB_IMAGE_BASE_URL}/original${review.author_details.avatar_path}`}
+                        alt={review.author_details.name}
+                        width={48}
+                        height={48}
+                      />
+                    )}
                   </div>
 
-                  <div className="flex flex-col grow justify-center">
-                    <span className="font-bold">
+                  <div className="review__info">
+                    <span className="review__info-title">
                       {review.author_details.username}
                     </span>
 
-                    <span className="text-xs">
+                    <span className="review__info-subtitle">
                       {transformToReviewDate(review.created_at)}
                     </span>
                   </div>
@@ -91,18 +91,19 @@ function MovieReviews({ id }: MovieReviewsProps) {
                       <Image
                         src="/icons/star.svg"
                         alt="Icon"
+                        className="review__rating-icon"
                         height={16}
                         width={16}
                       />
 
-                      <span className="font-semibold text-4xl ml-1.5">
+                      <span className="review__rating-number">
                         {review.author_details.rating.toFixed(1)}
                       </span>
                     </div>
                   )}
                 </div>
 
-                <span className='text-justify'>
+                <span className="review__content">
                   <div
                     dangerouslySetInnerHTML={{
                       __html: transformContent(index, review.content),
@@ -110,7 +111,7 @@ function MovieReviews({ id }: MovieReviewsProps) {
                   />
 
                   <button
-                    className="text-red-500 italic underline cursor-pointer"
+                    className="review__button"
                     onClick={() => {
                       readMoreContent(index);
                     }}
