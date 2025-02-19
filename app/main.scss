@@ -1,1 +1,5 @@
 @use 'tailwindcss' as *;
+
+@theme {
+  --font-sans: 'Montserrat', system-ui, sans-serif;
+}
