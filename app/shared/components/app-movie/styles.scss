@@ -33,6 +33,14 @@
     @apply top-0 left-0 opacity-0 hover:opacity-100;
 
     background-color: rgba(0, 0, 0, 0.8);
+
+    &-rating {
+      @apply flex font-semibold items-center text-2xl;
+
+      > * {
+        @apply w-auto h-auto;
+      }
+    }
   }
 
   &__button-text {

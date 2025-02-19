@@ -37,7 +37,7 @@ function AppMovie({ movie }: AppMovieProps) {
         </span>
 
         <div className="movie__hover group-hover/movie:visible">
-          <div className="flex font-semibold items-center text-2xl">
+          <div className="movie__hover-rating">
             <Image src="/icons/star.svg" alt="Icon" height={32} width={32} />
 
             <span className="ml-2">
