@@ -9,14 +9,12 @@
 .detail {
   @apply flex justify-center p-6;
 
-  margin-top: 66px;
-
   &__poster {
     @apply bg-white md:mr-8;
   }
 
   &__layout {
-    @apply flex flex-col md:flex-row text-white w-full;
+    @apply flex flex-col md:flex-row px-4 text-white w-full;
 
     max-width: 1280px;
   }

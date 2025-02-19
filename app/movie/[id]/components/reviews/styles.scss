@@ -4,10 +4,9 @@
   @apply bg-white flex justify-center;
 
   &__layout {
-    @apply flex flex-col w-full;
+    @apply flex flex-col px-4 py-14 w-full;
 
     max-width: 1280px;
-    padding: 56px 16px;
   }
 
   &__card {
