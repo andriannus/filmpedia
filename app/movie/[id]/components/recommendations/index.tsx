@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import { useMemo } from 'react';
 
 import { fetchMovieRecommendations } from '@/app/shared/apis/movie';
+import AppLoader from '@/app/shared/components/app-loader';
 
 import './styles.scss';
 
@@ -35,6 +36,7 @@ function MovieRecommendations({ id }: MovieRecommendationsProps) {
   }, [queryRecommendation.data, queryRecommendation.isError]);
 
   if (queryRecommendation.isError || !movies.length) return null;
+  if (queryRecommendation.isFetching) return <AppLoader />;
 
   return (
     <div className="recommendation">

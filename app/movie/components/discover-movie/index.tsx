@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import { Fragment } from 'react';
 
 import { fetchDiscoverMovie } from '@/app/shared/apis/discover';
+import AppLoader from '@/app/shared/components/app-loader';
 
 import './styles.scss';
 
@@ -37,6 +38,10 @@ function DiscoverMovie() {
 
   if (queryDiscover.isError) return null;
 
+  if (queryDiscover.isFetching && !queryDiscover.isFetchingNextPage) {
+    return <AppLoader />;
+  }
+
   return (
     <>
       <div className="discover">
@@ -51,8 +56,10 @@ function DiscoverMovie() {
         })}
       </div>
 
-      {queryDiscover.hasNextPage && (
-        <div className="discover__action">
+      <div className="discover__action">
+        {queryDiscover.isFetchingNextPage && <AppLoader />}
+
+        {!queryDiscover.isFetchingNextPage && queryDiscover.hasNextPage && (
           <AppButton
             onClick={() => {
               queryDiscover.fetchNextPage();
@@ -60,8 +67,8 @@ function DiscoverMovie() {
           >
             Load More
           </AppButton>
-        </div>
-      )}
+        )}
+      </div>
     </>
   );
 }

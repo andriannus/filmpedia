@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useEffect, useMemo, useState } from 'react';
 
 import { fetchMovieReviews } from '@/app/shared/apis/movie';
+import AppLoader from '@/app/shared/components/app-loader';
 import { TMDB_IMAGE_BASE_URL } from '@/app/shared/constants/movie';
 import { transformToReviewDate } from '@/app/shared/utils/date';
 
@@ -54,6 +55,7 @@ function MovieReviews({ id }: MovieReviewsProps) {
   };
 
   if (queryReview.isError || !reviews.length) return null;
+  if (queryReview.isFetching) return <AppLoader />;
 
   return (
     <div className="review">

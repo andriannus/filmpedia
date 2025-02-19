@@ -9,11 +9,7 @@ import AppSearch from '@/app/shared/components/app-search';
 
 import './styles.scss';
 
-type AppHeaderProps = {
-  transparent?: boolean;
-};
-
-function AppHeader({ transparent }: AppHeaderProps) {
+function AppHeader() {
   const [scrolled, setScrolled] = useState(false);
 
   const handleScroll = useCallback(() => {
@@ -37,7 +33,6 @@ function AppHeader({ transparent }: AppHeaderProps) {
       className={cc([
         'navbar',
         {
-          'navbar--transparent': transparent,
           'navbar--active': scrolled,
         },
       ])}

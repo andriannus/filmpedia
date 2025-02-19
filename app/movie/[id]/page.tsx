@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 
 import { fetchMovie } from '@/app/shared/apis/movie';
-import AppHeader from '@/app/shared/components/app-header';
 import AppLayout from '@/app/shared/components/app-layout';
 import { TMDB_IMAGE_BASE_URL } from '@/app/shared/constants/movie';
 
@@ -45,7 +44,6 @@ async function PageMovie({ params }: PageMovieProps) {
 
   return (
     <AppLayout>
-      <AppHeader />
       <MovieDetail id={id} />
       <MovieReviews id={id} />
       <MovieRecommendations id={id} />

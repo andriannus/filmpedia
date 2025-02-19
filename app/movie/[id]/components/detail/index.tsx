@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import Image from 'next/image';
 
 import { fetchMovie } from '@/app/shared/apis/movie';
+import AppLoader from '@/app/shared/components/app-loader';
 import { TMDB_IMAGE_BASE_URL } from '@/app/shared/constants/movie';
 
 import './styles.scss';
@@ -14,7 +15,7 @@ type DetailMovieProps = {
 
 function MovieDetail({ id }: DetailMovieProps) {
   const queryMovie = useQuery({
-    queryKey: ['movie', id],
+    queryKey: ['movie-detail', id],
     queryFn: () => fetchMovie(id),
   });
 
@@ -24,6 +25,7 @@ function MovieDetail({ id }: DetailMovieProps) {
   })();
 
   if (queryMovie.isError || !queryMovie.data) return null;
+  if (queryMovie.isFetching) return <AppLoader />;
 
   return (
     <>
