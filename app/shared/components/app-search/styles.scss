@@ -1,24 +1,48 @@
 @reference "tailwindcss";
 
 .search {
-  @apply hidden lg:flex items-center rounded-sm;
+  @apply hidden lg:flex items-center relative rounded-sm;
 
   background-color: rgba(0, 0, 0, 0.13);
   margin: 0 42px;
   padding: 8px 12px;
   width: 571px;
 
-  &__button {
+  &--active {
+    @apply bg-transparent font-semibold text-white;
+  }
+
+  &__suffix {
     @apply p-1 mr-3 lg:hidden;
   }
 
   &__input {
-    @apply w-full;
+    @apply outline-none text-white w-full;
 
     padding: 0 12px;
 
     &::placeholder {
       color: rgba(229, 229, 229, 1);
     }
+  }
+
+  &__results {
+    @apply absolute rounded-b-lg left-0 overflow-hidden w-full;
+
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #e5e5e5;
+    top: 46px;
+
+    &-item {
+      @apply cursor-pointer hover:bg-gray-500 text-sm;
+    }
+
+    &-empty {
+      @apply block italic p-4 text-center text-sm;
+    }
+  }
+
+  &__link {
+    @apply block px-4 py-2 w-full;
   }
 }
