@@ -11,7 +11,7 @@ function AppLayout({ children }: PropsWithChildren) {
   return (
     <div className="layout">
       <AppHeader />
-      {children}
+      <main className="layout__main">{children}</main>
       <AppFooter />
     </div>
   );

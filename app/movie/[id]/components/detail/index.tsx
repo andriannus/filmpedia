@@ -24,8 +24,14 @@ function MovieDetail({ id }: DetailMovieProps) {
     return queryMovie.data.genres.map((genre) => genre.name).join(', ');
   })();
 
+  if (queryMovie.isFetching)
+    return (
+      <div className="detail__loading">
+        <AppLoader />
+      </div>
+    );
+
   if (queryMovie.isError || !queryMovie.data) return null;
-  if (queryMovie.isFetching) return <AppLoader />;
 
   return (
     <>

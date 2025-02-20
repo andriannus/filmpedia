@@ -52,7 +52,7 @@ function AppHeader() {
 
         <ul className="nav">
           <li className="nav__link">
-            <Image src="/icons/movie.svg" alt="Icon" height={20} width={20} />
+            <Image src="/icons/grid.svg" alt="Icon" height={20} width={20} />
             <span>Categories</span>
           </li>
 

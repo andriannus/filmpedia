@@ -1,4 +1,9 @@
 .layout {
   @apply min-h-screen;
+
   background-color: #1e232b;
+
+  &__main {
+    min-height: calc(100vh - 160px);
+  }
 }

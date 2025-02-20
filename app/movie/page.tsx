@@ -22,12 +22,12 @@ export const metadata: Metadata = {
 function PageDiscover() {
   return (
     <AppLayout>
-      <main className="main">
-        <div className="main__layout">
-          <div className="main__heading">
-            <h1 className="main__title">Discover Movies</h1>
+      <div className="home">
+        <div className="home__layout">
+          <div className="home__heading">
+            <h1 className="home__title">Discover Movies</h1>
 
-            <div className="main__info">
+            <div className="home__info">
               <span>My Movies</span>
 
               <div className="chip">
@@ -37,15 +37,15 @@ function PageDiscover() {
             </div>
           </div>
 
-          <div className="main__filter">
+          <div className="home__filter">
             <Filter />
           </div>
 
-          <div className="main__discover">
+          <div className="home__discover">
             <Discover />
           </div>
         </div>
-      </main>
+      </div>
     </AppLayout>
   );
 }

@@ -38,6 +38,12 @@
   &__genre {
     @apply font-medium text-sm;
   }
+
+  &__loading {
+    @apply pb-20;
+
+    padding-top: calc(66px + 80px);
+  }
 }
 
 .overview {

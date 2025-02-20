@@ -31,7 +31,7 @@ function Filter() {
         <>
           <div className="filter__title filter__title-genre">Genres</div>
 
-          <div className="mt-4 pl-5 pr-5 pb-5">
+          <div className="filter__checkbox">
             <AppCheckboxGroup
               value={genres}
               options={genreOptions}
