@@ -1,10 +1,11 @@
 @reference "tailwindcss";
 
 .filter {
-  @apply block text-white;
+  @apply block sticky text-white;
 
   background: linear-gradient(180deg, #0e1723 0%, rgba(30, 35, 42, 0) 100%);
   border-radius: 8px;
+  top: 80px;
 
   &__checkbox {
     @apply mt-4 pl-5 pr-5 pb-5;

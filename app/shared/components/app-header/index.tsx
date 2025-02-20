@@ -6,10 +6,13 @@ import Link from 'next/link';
 import { useCallback, useEffect, useState } from 'react';
 
 import AppSearch from '@/app/shared/components/app-search';
+import { useGenreMovie } from '@/app/shared/hooks/use-genre-movie';
 
 import './styles.scss';
 
 function AppHeader() {
+  const { genreOptions } = useGenreMovie();
+
   const [scrolled, setScrolled] = useState(false);
 
   const handleScroll = useCallback(() => {
@@ -51,9 +54,21 @@ function AppHeader() {
         <AppSearch />
 
         <ul className="nav">
-          <li className="nav__link">
+          <li className="nav__link dropdown">
             <Image src="/icons/grid.svg" alt="Icon" height={20} width={20} />
             <span>Categories</span>
+
+            {genreOptions.length > 0 && (
+              <ul className="dropdown__menu">
+                {genreOptions.map((option) => {
+                  return (
+                    <li key={option.value} className="dropdown__item">
+                      {option.label}
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
           </li>
 
           <li className="nav__link">Movies</li>

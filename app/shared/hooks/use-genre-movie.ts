@@ -14,7 +14,7 @@ export function useGenreMovie() {
   const genreOptions = (() => {
     if (!queryGenreMovie.data) return [];
 
-    return queryGenreMovie.data.genres.map<Option>((genre) => ({
+    return queryGenreMovie.data.genres.slice(0, 10).map<Option>((genre) => ({
       label: genre.name,
       value: genre.id.toString(),
     }));
