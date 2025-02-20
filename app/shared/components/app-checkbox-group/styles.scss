@@ -1,0 +1,35 @@
+@reference "tailwindcss";
+
+.checkbox {
+  @apply flex items-center mb-4 relative text-sm;
+
+  &__input {
+    @apply absolute cursor-pointer h-0 opacity-0 w-0;
+
+    &:checked ~ .checkbox__mark {
+      background-color: #e74c3c;
+      border-color: rgba(255, 255, 255, 0.5);
+
+      &:after {
+        @apply block;
+      }
+    }
+  }
+
+  &__mark {
+    @apply cursor-pointer relative right-0 rounded-sm top-0;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    height: 15px;
+    width: 15px;
+
+    &:after {
+      @apply absolute h-4 hidden w-4;
+
+      content: '✓';
+      right: -4px;
+      top: -4px;
+    }
+  }
+}

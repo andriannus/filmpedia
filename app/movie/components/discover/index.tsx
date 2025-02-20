@@ -16,7 +16,7 @@ const AppButton = dynamic(() => import('@/app/shared/components/app-button'), {
   ssr: false,
 });
 
-function DiscoverMovie() {
+function Discover() {
   const queryDiscover = useInfiniteQuery({
     queryKey: ['discover-movie'],
     queryFn: ({ pageParam }) => {
@@ -73,4 +73,4 @@ function DiscoverMovie() {
   );
 }
 
-export default DiscoverMovie;
+export default Discover;

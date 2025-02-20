@@ -1,0 +1,32 @@
+@reference "tailwindcss";
+
+.select {
+  @apply relative;
+
+  > * {
+    @apply appearance-none block outline-none py-2 px-4 rounded-sm text-sm w-full;
+
+    background-color: rgba(224, 224, 224, 0.13);
+  }
+
+  &::before,
+  &::after {
+    @apply absolute pointer-events-none right-3;
+
+    content: '';
+  }
+
+  &::before {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 4px solid white;
+    top: 40%;
+  }
+
+  &::after {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid white;
+    top: 55%;
+  }
+}

@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 
 import AppLayout from '@/app/shared/components/app-layout';
 
-import DiscoverMovie from './components/discover-movie';
+import Discover from './components/discover';
+import Filter from './components/filter';
 import './styles.scss';
 
 export const metadata: Metadata = {
@@ -37,11 +38,11 @@ function PageDiscover() {
           </div>
 
           <div className="main__filter">
-            <div>Filter</div>
+            <Filter />
           </div>
 
           <div className="main__discover">
-            <DiscoverMovie />
+            <Discover />
           </div>
         </div>
       </main>
