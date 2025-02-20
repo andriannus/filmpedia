@@ -57,8 +57,12 @@
   }
 
   &__item {
-    @apply cursor-pointer font-semibold hover:bg-gray-300 px-4 py-2 text-xs uppercase;
+    @apply cursor-pointer font-semibold hover:bg-gray-300 text-xs uppercase;
 
     color: #1e232b;
+  }
+
+  &__link {
+    @apply block px-4 py-2 w-full;
   }
 }

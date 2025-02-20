@@ -1,7 +1,8 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { Fragment } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { Fragment, useEffect } from 'react';
 
 import { useDiscover } from '@/app/movie/contexts/discover';
 import AppLoader from '@/app/shared/components/app-loader';
@@ -16,7 +17,16 @@ const AppButton = dynamic(() => import('@/app/shared/components/app-button'), {
 });
 
 function Discover() {
-  const { queryDiscover } = useDiscover();
+  const { queryDiscover, setGenres } = useDiscover();
+
+  const searchParams = useSearchParams();
+  const genre = searchParams.get('genre');
+
+  useEffect(() => {
+    if (!!genre) {
+      setGenres([genre]);
+    }
+  }, [genre, setGenres]);
 
   if (queryDiscover.isFetching && !queryDiscover.isFetchingNextPage) {
     return <AppLoader />;

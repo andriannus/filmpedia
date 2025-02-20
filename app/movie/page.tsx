@@ -4,7 +4,6 @@ import AppLayout from '@/app/shared/components/app-layout';
 
 import Discover from './components/discover';
 import Filter from './components/filter';
-import { DiscoverProvider } from './contexts/discover';
 import './styles.scss';
 
 export const metadata: Metadata = {
@@ -22,34 +21,32 @@ export const metadata: Metadata = {
 
 function PageDiscover() {
   return (
-    <DiscoverProvider>
-      <AppLayout>
-        <div className="home">
-          <div className="home__layout">
-            <div className="home__heading">
-              <h1 className="home__title">Discover Movies</h1>
+    <AppLayout>
+      <div className="home">
+        <div className="home__layout">
+          <div className="home__heading">
+            <h1 className="home__title">Discover Movies</h1>
 
-              <div className="home__info">
-                <span>My Movies</span>
+            <div className="home__info">
+              <span>My Movies</span>
 
-                <div className="chip">
-                  <span className="chip__count">2</span>
-                  <span>movies</span>
-                </div>
+              <div className="chip">
+                <span className="chip__count">2</span>
+                <span>movies</span>
               </div>
             </div>
+          </div>
 
-            <div className="home__filter">
-              <Filter />
-            </div>
+          <div className="home__filter">
+            <Filter />
+          </div>
 
-            <div className="home__discover">
-              <Discover />
-            </div>
+          <div className="home__discover">
+            <Discover />
           </div>
         </div>
-      </AppLayout>
-    </DiscoverProvider>
+      </div>
+    </AppLayout>
   );
 }
 

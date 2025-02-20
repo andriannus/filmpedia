@@ -1,7 +1,8 @@
 import localFont from 'next/font/local';
 
-import ReactQueryProvider from './provider';
+import { DiscoverProvider } from '@/app/movie/contexts/discover';
 
+import ReactQueryProvider from './provider';
 import './main.scss';
 
 const montserrat = localFont({
@@ -35,7 +36,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.className}`}>
-        <ReactQueryProvider>{children}</ReactQueryProvider>
+        <ReactQueryProvider>
+          <DiscoverProvider>{children}</DiscoverProvider>
+        </ReactQueryProvider>
       </body>
     </html>
   );

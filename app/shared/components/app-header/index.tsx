@@ -63,7 +63,15 @@ function AppHeader() {
                 {genreOptions.map((option) => {
                   return (
                     <li key={option.value} className="dropdown__item">
-                      {option.label}
+                      <Link
+                        className="dropdown__link"
+                        href={{
+                          pathname: '/movie',
+                          query: { genre: option.value },
+                        }}
+                      >
+                        {option.label}
+                      </Link>
                     </li>
                   );
                 })}
