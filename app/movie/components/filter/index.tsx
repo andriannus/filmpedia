@@ -1,7 +1,6 @@
 'use client';
 
-import { useState } from 'react';
-
+import { useDiscover } from '@/app/movie/contexts/discover';
 import AppCheckboxGroup from '@/app/shared/components/app-checkbox-group';
 import AppSelect from '@/app/shared/components/app-select';
 import { SORT_OPTIONS } from '@/app/shared/constants/discover';
@@ -10,9 +9,8 @@ import { useGenreMovie } from '@/app/shared/hooks/use-genre-movie';
 import './styles.scss';
 
 function Filter() {
+  const { genres, setGenres, setSortBy, sortBy } = useDiscover();
   const { genreOptions } = useGenreMovie();
-
-  const [genres, setGenres] = useState<string[]>([]);
 
   return (
     <div className="filter">
@@ -21,8 +19,11 @@ function Filter() {
 
         <div className="p-5">
           <AppSelect
+            value={sortBy}
             options={SORT_OPTIONS}
-            onChange={() => {}}
+            onChange={(value) => {
+              setSortBy(value);
+            }}
           />
         </div>
       </div>

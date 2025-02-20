@@ -6,4 +6,8 @@
   &__action {
     @apply flex justify-center pt-16 pb-16;
   }
+
+  &__empty {
+    @apply block italic text-center text-white;
+  }
 }

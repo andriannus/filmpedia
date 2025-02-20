@@ -1,10 +1,9 @@
 'use client';
 
-import { useInfiniteQuery } from '@tanstack/react-query';
 import dynamic from 'next/dynamic';
 import { Fragment } from 'react';
 
-import { fetchDiscoverMovie } from '@/app/shared/apis/discover';
+import { useDiscover } from '@/app/movie/contexts/discover';
 import AppLoader from '@/app/shared/components/app-loader';
 
 import './styles.scss';
@@ -17,58 +16,47 @@ const AppButton = dynamic(() => import('@/app/shared/components/app-button'), {
 });
 
 function Discover() {
-  const queryDiscover = useInfiniteQuery({
-    queryKey: ['discover-movie'],
-    queryFn: ({ pageParam }) => {
-      return fetchDiscoverMovie({
-        params: {
-          page: pageParam,
-        },
-      });
-    },
-    initialPageParam: 1,
-    getNextPageParam: (lastPage) => {
-      if (lastPage.page < lastPage.total_pages) {
-        return lastPage.page + 1;
-      }
-
-      return undefined;
-    },
-  });
-
-  if (queryDiscover.isError) return null;
+  const { queryDiscover } = useDiscover();
 
   if (queryDiscover.isFetching && !queryDiscover.isFetchingNextPage) {
     return <AppLoader />;
   }
 
+  if (queryDiscover.isError) return null;
+
   return (
     <>
-      <div className="discover">
-        {queryDiscover.data?.pages.map((group, index) => {
-          return (
-            <Fragment key={index}>
-              {group.results.map((movie) => {
-                return <AppMovie key={movie.id} movie={movie} />;
-              })}
-            </Fragment>
-          );
-        })}
-      </div>
+      {queryDiscover.data?.pages[0].results.length === 0 ? (
+        <span className="discover__empty">Data not found.</span>
+      ) : (
+        <>
+          <div className="discover">
+            {queryDiscover.data?.pages.map((group, index) => {
+              return (
+                <Fragment key={index}>
+                  {group.results.map((movie) => {
+                    return <AppMovie key={movie.id} movie={movie} />;
+                  })}
+                </Fragment>
+              );
+            })}
+          </div>
 
-      <div className="discover__action">
-        {queryDiscover.isFetchingNextPage && <AppLoader />}
+          <div className="discover__action">
+            {queryDiscover.isFetchingNextPage && <AppLoader />}
 
-        {!queryDiscover.isFetchingNextPage && queryDiscover.hasNextPage && (
-          <AppButton
-            onClick={() => {
-              queryDiscover.fetchNextPage();
-            }}
-          >
-            Load More
-          </AppButton>
-        )}
-      </div>
+            {!queryDiscover.isFetchingNextPage && queryDiscover.hasNextPage && (
+              <AppButton
+                onClick={() => {
+                  queryDiscover.fetchNextPage?.();
+                }}
+              >
+                Load More
+              </AppButton>
+            )}
+          </div>
+        </>
+      )}
     </>
   );
 }
