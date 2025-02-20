@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import AppLayout from '@/app/shared/components/app-layout';
+import SuspenseFallback from '@/app/shared/components/app-suspense-fallback';
 
 import Discover from './components/discover';
 import Filter from './components/filter';
@@ -42,7 +43,9 @@ function PageDiscover() {
           </div>
 
           <div className="home__discover">
-            <Discover />
+            <SuspenseFallback>
+              <Discover />
+            </SuspenseFallback>
           </div>
         </div>
       </div>
