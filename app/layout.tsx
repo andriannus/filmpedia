@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import localFont from 'next/font/local';
 
 import { DiscoverProvider } from '@/app/movie/contexts/discover';
@@ -39,6 +40,8 @@ export default function RootLayout({
         <ReactQueryProvider>
           <DiscoverProvider>{children}</DiscoverProvider>
         </ReactQueryProvider>
+
+        <Analytics />
       </body>
     </html>
   );
