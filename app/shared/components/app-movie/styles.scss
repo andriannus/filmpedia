@@ -26,6 +26,10 @@
 
   &__poster {
     @apply bg-white h-fit mb-3 relative w-full;
+
+    img {
+      @apply w-full;
+    }
   }
 
   &__hover {

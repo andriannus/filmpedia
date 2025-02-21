@@ -51,7 +51,7 @@ function AppMovie({ movie }: AppMovieProps) {
       <div className="movie__poster group/movie">
         {!!movie.poster_path && (
           <Image
-            src={`${TMDB_IMAGE_BASE_URL}/w300${movie.poster_path}`}
+            src={`${TMDB_IMAGE_BASE_URL}/w400${movie.poster_path}`}
             alt={movie.title}
             width={300}
             height={450}
