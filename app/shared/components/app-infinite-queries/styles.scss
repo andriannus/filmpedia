@@ -1,0 +1,25 @@
+@reference "tailwindcss";
+
+.infinite {
+  &__content {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pb-4;
+  }
+
+  &__footer {
+    @apply flex justify-center pt-12 pb-16;
+  }
+
+  &__empty {
+    @apply block italic text-center text-white;
+  }
+
+  &--grid {
+    &-4 {
+      @apply lg:grid-cols-4;
+    }
+
+    &-5 {
+      @apply lg:grid-cols-5;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@reference "tailwindcss";
+
+.chip {
+  @apply inline-block ml-3 rounded-4xl;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 8px 18px;
+
+  &__count {
+    @apply font-semibold mr-1;
+  }
+}

@@ -3,9 +3,10 @@ import type { Metadata } from 'next';
 import AppLayout from '@/app/shared/components/app-layout';
 import SuspenseFallback from '@/app/shared/components/app-suspense-fallback';
 
-import Discover from './components/discover';
+import Content from './components/content';
 import Filter from './components/filter';
 import './styles.scss';
+import Favorite from './components/favorite';
 
 export const metadata: Metadata = {
   title: 'Home',
@@ -29,12 +30,7 @@ function PageDiscover() {
             <h1 className="home__title">Discover Movies</h1>
 
             <div className="home__info">
-              <span>My Movies</span>
-
-              <div className="chip">
-                <span className="chip__count">2</span>
-                <span>movies</span>
-              </div>
+              <Favorite />
             </div>
           </div>
 
@@ -44,7 +40,7 @@ function PageDiscover() {
 
           <div className="home__discover">
             <SuspenseFallback>
-              <Discover />
+              <Content />
             </SuspenseFallback>
           </div>
         </div>

@@ -1,12 +1,12 @@
 @reference "tailwindcss";
 
-.home {
+.favorite {
   @apply flex justify-center;
 
   padding-top: 66px;
 
   &__layout {
-    @apply grid grid-cols-1 md:grid-cols-4 gap-8 w-full;
+    @apply w-full;
 
     max-width: 1280px;
     padding: 0 16px;
@@ -18,19 +18,7 @@
     color: #e5e5e5;
   }
 
-  &__discover {
-    @apply col-span-4 md:col-span-3;
-  }
-
-  &__filter {
-    @apply hidden md:block;
-  }
-
   &__title {
     @apply font-semibold text-2xl;
-  }
-
-  &__info {
-    @apply flex items-center;
   }
 }

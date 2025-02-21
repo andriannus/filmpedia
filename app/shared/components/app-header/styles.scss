@@ -53,11 +53,11 @@
     @apply absolute bg-white invisible left-0 overflow-hidden rounded-md w-full;
 
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
-    top: 48px;
+    top: 46px;
   }
 
   &__item {
-    @apply cursor-pointer font-semibold hover:bg-gray-300 text-xs uppercase;
+    @apply font-semibold hover:bg-gray-300 text-xs uppercase;
 
     color: #1e232b;
   }
