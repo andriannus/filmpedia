@@ -29,21 +29,24 @@
 .nav {
   @apply hidden lg:flex;
 
-  &__link {
-    @apply flex cursor-pointer items-center uppercase;
+  &__item {
+    @apply flex items-center uppercase;
 
     color: #e5e5e5;
     font-weight: 500;
-    padding: 8px 16px;
 
     > :nth-child(2) {
       @apply ml-2.5;
     }
   }
+
+  &__link {
+    @apply cursor-pointer px-4 py-2;
+  }
 }
 
 .dropdown {
-  @apply relative;
+  @apply cursor-pointer px-4 py-2 relative;
 
   &:hover &__menu {
     @apply visible;

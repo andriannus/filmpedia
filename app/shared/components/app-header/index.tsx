@@ -54,7 +54,7 @@ function AppHeader() {
         <AppSearch />
 
         <ul className="nav">
-          <li className="nav__link dropdown">
+          <li className="nav__item dropdown">
             <Image src="/icons/grid.svg" alt="Icon" height={20} width={20} />
             <span>Categories</span>
 
@@ -79,9 +79,18 @@ function AppHeader() {
             )}
           </li>
 
-          <li className="nav__link">Movies</li>
-          <li className="nav__link">TV Shows</li>
-          <li className="nav__link">Login</li>
+          <li className="nav__item">
+            <Link className="nav__link" href="/movie">Movies</Link>
+          </li>
+          <li className="nav__item">
+            <Link className="nav__link" href="/movie">TV Shows</Link>
+          </li>
+
+          <li className="nav__item">
+            <Link className="nav__link" href="/login">
+              Login
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

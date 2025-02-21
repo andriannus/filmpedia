@@ -13,7 +13,15 @@
   }
 
   &__suffix {
-    @apply p-1 mr-3 lg:hidden;
+    @apply flex items-center mr-3 lg:hidden;
+
+    > * {
+      @apply h-full w-full;
+    }
+  }
+
+  &__button {
+    @apply flex items-center justify-center h-8 w-8;
   }
 
   &__input {

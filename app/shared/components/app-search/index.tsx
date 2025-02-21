@@ -82,7 +82,9 @@ function AppSearch() {
       </div>
 
       <div className="search__suffix">
-        <Image src="/icons/search.svg" alt="Icon" height={20} width={20} />
+        <Link className="search__button" href="/search">
+          <Image src="/icons/search.svg" alt="Icon" height={16} width={16} />
+        </Link>
       </div>
     </>
   );

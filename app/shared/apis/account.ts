@@ -27,3 +27,11 @@ export async function addMovieToFavorite(movieID: number) {
 
   return data;
 }
+
+export async function validateKey() {
+  const { data } = await apiTMDBService.get<{ success: boolean }>(
+    '/authentication',
+  );
+
+  return data;
+}
