@@ -23,7 +23,7 @@
 - Use API from [TMDB](https://developer.themoviedb.org/docs/getting-started)
 - Use third-party services by Vercel
 - Use DRY principle
-- Deploy web aplication to [Vercel](http://vercel.com)
+- Deploy web application to [Vercel](https://vercel.com)
 
 ### How to maintain third-party services
 
