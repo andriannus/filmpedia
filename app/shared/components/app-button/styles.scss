@@ -13,4 +13,10 @@
       @apply bg-white text-black;
     }
   }
+
+  &--active {
+    background-color: #a9ffc6;
+    border: 1px solid #ffffff;
+    color: #155129;
+  }
 }
