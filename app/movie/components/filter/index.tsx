@@ -1,9 +1,9 @@
 'use client';
 
-import { useDiscover } from '@/app/movie/contexts/discover';
 import AppCheckboxGroup from '@/app/shared/components/app-checkbox-group';
 import AppSelect from '@/app/shared/components/app-select';
 import { SORT_OPTIONS } from '@/app/shared/constants/discover';
+import { useDiscover } from '@/app/movie/contexts/discover';
 import { useGenreMovie } from '@/app/shared/hooks/use-genre-movie';
 
 import './styles.scss';

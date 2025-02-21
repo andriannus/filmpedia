@@ -3,8 +3,8 @@
 import { useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
 
-import { useDiscover } from '@/app/movie/contexts/discover';
 import AppInfiniteQueries from '@/app/shared/components/app-infinite-queries';
+import { useDiscover } from '@/app/movie/contexts/discover';
 
 function Content() {
   const { queryDiscover, setGenres } = useDiscover();

@@ -1,6 +1,6 @@
 'use client';
 
-import { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 
 import AppFooter from '@/app/shared/components/app-footer';
 import AppHeader from '@/app/shared/components/app-header';

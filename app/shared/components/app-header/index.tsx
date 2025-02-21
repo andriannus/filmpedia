@@ -80,10 +80,15 @@ function AppHeader() {
           </li>
 
           <li className="nav__item">
-            <Link className="nav__link" href="/movie">Movies</Link>
+            <Link className="nav__link" href="/movie">
+              Movies
+            </Link>
           </li>
+
           <li className="nav__item">
-            <Link className="nav__link" href="/movie">TV Shows</Link>
+            <Link className="nav__link" href="/movie">
+              TV Shows
+            </Link>
           </li>
 
           <li className="nav__item">

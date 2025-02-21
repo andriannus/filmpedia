@@ -48,7 +48,7 @@ function AppMovie({ movie }: AppMovieProps) {
 
   return (
     <div className="movie">
-      <div className="movie__poster group/movie">
+      <div className="movie__poster">
         {!!movie.poster_path && (
           <Image
             src={`${TMDB_IMAGE_BASE_URL}/w400${movie.poster_path}`}
@@ -63,7 +63,7 @@ function AppMovie({ movie }: AppMovieProps) {
           {toFixedIfNecessary(movie.vote_average)}
         </span>
 
-        <div className="movie__hover group-hover/movie:visible">
+        <div className="movie__hover">
           <div className="movie__hover-rating">
             <Image src="/icons/star.svg" alt="Icon" height={32} width={32} />
 

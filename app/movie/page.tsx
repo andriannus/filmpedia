@@ -4,9 +4,9 @@ import AppLayout from '@/app/shared/components/app-layout';
 import SuspenseFallback from '@/app/shared/components/app-suspense-fallback';
 
 import Content from './components/content';
+import Favorite from './components/favorite';
 import Filter from './components/filter';
 import './styles.scss';
-import Favorite from './components/favorite';
 
 export const metadata: Metadata = {
   title: 'Home',

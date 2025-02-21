@@ -5,8 +5,8 @@ import AppLayout from '@/app/shared/components/app-layout';
 import { TMDB_IMAGE_BASE_URL } from '@/app/shared/constants/movie';
 
 import MovieDetail from './components/detail';
-import MovieReviews from './components/reviews';
 import MovieRecommendations from './components/recommendations';
+import MovieReviews from './components/reviews';
 
 type PageMovieProps = {
   params: Promise<{ id: number }>;
